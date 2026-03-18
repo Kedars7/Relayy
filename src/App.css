@@ -1,0 +1,24 @@
+/* App-level overrides – kept minimal; global styles live in index.css */
+
+.app-shell {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.app-bg-layer {
+	position: absolute;
+	inset: 0;
+}
+
+.app-bg-layer canvas {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.app-content-layer {
+	position: relative;
+	z-index: 2;
+}
