@@ -1,8 +1,7 @@
-import React from 'react'
-import relayyIcon from '/relayy-icon.jpg'
+import React from "react";
+import relayyIcon from "/relayy-icon.jpg";
 import { FiGithub } from "react-icons/fi";
 import { FiBook } from "react-icons/fi";
-
 
 const Navigation = () => {
   return (
@@ -32,7 +31,7 @@ const Navigation = () => {
         </a>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
