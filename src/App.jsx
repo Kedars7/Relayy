@@ -1,14 +1,10 @@
 'use client';
 import { useEffect } from "react";
 import "./App.css";
-import Comparison from "./components/Comparison.jsx";
-import FAQ from "./components/FAQ.jsx";
-import Features from "./components/Features.jsx";
-import Landing from "./components/Landing.jsx";
-import Navigation from "./components/Navigation.jsx";
-import Usecase from "./components/Usecase.jsx";
-import DarkVeil from "./reactBits/DarkVeil.jsx";
 import Lenis from "lenis";
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import DocsPage from "./pages/DocsPage";
 
 export default function App() {
 
@@ -25,26 +21,11 @@ export default function App() {
   }, []);
 
   return (
-        <div className="app-shell ">
-      <div className="app-bg-layer">
-        <DarkVeil
-          hueShift={0}
-          noiseIntensity={0}
-          scanlineIntensity={0}
-          speed={0.5}
-          scanlineFrequency={0}
-          warpAmount={0}
-        />
-      </div>
-
-      <div className="app-content-layer">
-        <Navigation />
-        <Landing />
-        <Features />
-        <Comparison />
-        <Usecase />
-        <FAQ />
-      </div>
+    <div className="app-shell ">
+      <Routes>
+        <Route path="/" element={<LandingPage/>}/>
+        <Route path="/docs" element={<DocsPage/>}/>
+      </Routes>
     </div>
   );
 }

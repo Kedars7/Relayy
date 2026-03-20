@@ -8,7 +8,10 @@ const Landing = () => {
         <div className="space-y-6 max-w-4xl">
           {/* Open source badge */}
           <div className="inline-flex items-center gap-2 rounded-full bg-slate-800 px-4 py-2 text-sm font-medium text-slate-400">
-            <span className="h-2 w-2 rounded-full bg-green-400" />
+            <span className="relative inline-flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400/70" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-400" />
+            </span>
             Open Source
           </div>
           {/* Main Heading */}

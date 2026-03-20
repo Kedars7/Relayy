@@ -5,7 +5,6 @@ const useCases = [
   {
     title: "Webhook Testing",
     description: "Receive Stripe, GitHub, or Slack webhooks directly on your local machine without deploying.",
-    command: "ssh -R 80:localhost:3000 proxy.tunnl.gg",
     icon: FiGitBranch,
     accent: "text-amber-400",
     iconGlow: "shadow-[0_0_22px_rgba(251,146,60,0.25)] border-amber-500/25",
@@ -13,7 +12,6 @@ const useCases = [
   {
     title: "Demo Sharing",
     description: "Share a live preview of your work with clients or teammates - no staging server needed.",
-    command: "ssh -R 80:localhost:5173 proxy.tunnl.gg",
     icon: FiShare2,
     accent: "text-sky-400",
     iconGlow: "shadow-[0_0_22px_rgba(56,189,248,0.22)] border-sky-500/25",
@@ -21,7 +19,6 @@ const useCases = [
   {
     title: "Mobile Testing",
     description: "Test your app on real devices over the internet without complicated network setup.",
-    command: "ssh -R 80:localhost:8080 proxy.tunnl.gg",
     icon: FiSmartphone,
     accent: "text-emerald-400",
     iconGlow: "shadow-[0_0_22px_rgba(16,185,129,0.22)] border-emerald-500/25",
@@ -29,7 +26,6 @@ const useCases = [
   {
     title: "CI/CD Callbacks",
     description: "Let external services call back to your local environment during development and debugging.",
-    command: "ssh -R 80:localhost:4000 proxy.tunnl.gg",
     icon: FiMonitor,
     accent: "text-fuchsia-400",
     iconGlow: "shadow-[0_0_22px_rgba(217,70,239,0.2)] border-fuchsia-500/25",
@@ -41,7 +37,7 @@ const Usecase = () => {
     <section className="mx-auto w-[min(1300px,calc(100%-64px))] py-18 max-md:w-[calc(100%-32px)] max-md:py-14">
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-4xl font-bold tracking-[-0.02em] text-slate-50 max-md:text-3xl">Built For</h2>
-        <p className="mt-4 text-xl text-slate-400 max-md:text-lg">Common scenarios where tunnl.gg saves you time.</p>
+        <p className="mt-4 text-xl text-slate-400 max-md:text-lg">Common scenarios where Relayy saves you time.</p>
       </div>
 
       <div className="mx-auto mt-10 grid w-full max-w-5xl grid-cols-1 gap-5 md:grid-cols-2">
@@ -72,11 +68,6 @@ const Usecase = () => {
                 </p>
               </div>
 
-              <div className="relative mt-6 flex items-center gap-3 rounded-xl border border-slate-800/80 bg-slate-950 px-4 py-2.5 transition-all duration-300 group-hover:border-slate-600/70 group-hover:bg-slate-900/80">
-                <span className="text-lg font-semibold text-emerald-400">$</span>
-                <code className="font-mono-custom flex-1 truncate text-sm text-slate-400">{useCase.command}</code>
-                <FiCopy className="h-4 w-4 shrink-0 text-slate-500 transition-colors duration-300 group-hover:text-slate-300" aria-hidden="true" />
-              </div>
             </article>
           );
         })}

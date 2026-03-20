@@ -1,7 +1,7 @@
 import React from "react";
 import { FiCheck, FiX } from "react-icons/fi";
 
-const columns = ["tunnl.gg", "ngrok", "Cloudflare Tunnel", "localtunnel"];
+const columns = ["Relayy", "ngrok", "Cloudflare Tunnel", "localtunnel"];
 
 const rows = [
   {
@@ -52,7 +52,7 @@ const Comparison = () => {
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-4xl font-bold tracking-[-0.02em] text-slate-50 max-md:text-3xl">How We Compare</h2>
         <p className="mt-4 text-xl text-slate-400 max-md:text-lg">
-          See how tunnl.gg stacks up against the alternatives.
+          See how Relayy stacks up against the alternatives.
         </p>
       </div>
 
