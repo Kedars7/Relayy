@@ -20,22 +20,22 @@ const Navigation = () => {
 
       <div className="inline-flex items-center gap-6.5 max-md:gap-3.5">
         <Link
-          className="inline-flex items-center gap-2.5 text-xl font-medium text-slate-200/80 transition-all duration-200 ease-out hover:-translate-y-px hover:text-slate-50 max-md:gap-1.5 max-md:text-base"
+          className="inline-flex items-center gap-1.5 text-base font-medium text-slate-200/80 transition-all duration-200 ease-out hover:-translate-y-px hover:text-slate-50 sm:gap-2 sm:text-lg md:gap-2.5 md:text-xl"
           to={isDocsPage ? "/" : "/docs"}
           aria-label={isDocsPage ? "Open home" : "Open docs"}
         >
           {isDocsPage ? <FiHome aria-hidden="true" /> : <FiBook aria-hidden="true" />}
-          <span className="text-xl tracking-[-0.01em] max-md:text-base">{isDocsPage ? "Home" : "Docs"}</span>
+          <span className="tracking-[-0.01em]">{isDocsPage ? "Home" : "Docs"}</span>
         </Link>
         <Link
-          className="inline-flex items-center gap-2.5 text-xl font-medium text-slate-200/80 transition-all duration-200 ease-out hover:-translate-y-px hover:text-slate-50 max-md:gap-1.5 max-md:text-base"
+          className="inline-flex items-center gap-1.5 text-base font-medium text-slate-200/80 transition-all duration-200 ease-out hover:-translate-y-px hover:text-slate-50 sm:gap-2 sm:text-lg md:gap-2.5 md:text-xl"
           to="https://github.com/Kedars7/relayy-server"
           aria-label="Open GitHub"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FiGithub aria-hidden="true" />
-          <span className="text-xl tracking-[-0.01em] max-md:text-base">GitHub</span>
+          <span className="tracking-[-0.01em]">GitHub</span>
         </Link>
       </div>
     </nav>

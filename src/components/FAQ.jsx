@@ -37,9 +37,9 @@ const FAQ = () => {
   };
 
   return (
-    <section className="mx-auto w-[min(1300px,calc(100%-64px))] pt-60 max-md:w-[calc(100%-32px)] max-md:pt-30">
+    <section className="mx-auto w-[min(1300px,calc(100%-64px))] pt-24 sm:pt-36 lg:pt-52 max-md:w-[calc(100%-32px)]">
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-4xl font-bold tracking-[-0.02em] text-slate-50 max-md:text-3xl">
+        <h2 className="text-3xl font-bold tracking-[-0.02em] text-slate-50 sm:text-4xl">
           Frequently Asked Questions
         </h2>
       </div>
@@ -51,7 +51,7 @@ const FAQ = () => {
           return (
             <article
               key={item.question}
-              className={`rounded-xl border px-5 transition-all duration-300 text-md ${
+              className={`rounded-xl border px-4 transition-all duration-300 sm:px-5 ${
 
                 isOpen
                   ? "border-slate-700/70 bg-slate-900/50"
@@ -64,7 +64,7 @@ const FAQ = () => {
                 className="flex w-full items-center justify-between gap-4 py-5 text-left"
                 onClick={() => toggleItem(index)}
               >
-                <span className="text-md font-semibold tracking-[-0.01em] text-slate-100 max-md:text-xl">
+                <span className="text-base font-semibold tracking-[-0.01em] text-slate-100 sm:text-lg">
                   {item.question}
                 </span>
                 <FiChevronDown
@@ -76,7 +76,7 @@ const FAQ = () => {
               </button>
 
               {isOpen && (
-                <p className="pb-5 text-md leading-relaxed text-slate-400 max-md:text-base">
+                <p className="pb-5 text-sm leading-relaxed text-slate-400 sm:text-base">
                   {item.answer}
                 </p>
               )}

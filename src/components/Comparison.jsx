@@ -50,21 +50,21 @@ const Comparison = () => {
   return (
     <section className="mx-auto w-[min(1300px,calc(100%-64px))] py-18 max-md:w-[calc(100%-32px)] max-md:py-14">
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-4xl font-bold tracking-[-0.02em] text-slate-50 max-md:text-3xl">How We Compare</h2>
-        <p className="mt-4 text-xl text-slate-400 max-md:text-lg">
+        <h2 className="text-3xl font-bold tracking-[-0.02em] text-slate-50 sm:text-4xl">How We Compare</h2>
+        <p className="mt-4 text-base text-slate-400 sm:text-xl">
           See how Relayy stacks up against the alternatives.
         </p>
       </div>
 
       <div className="mx-auto mt-10 w-full max-w-5xl overflow-x-auto rounded-2xl border border-slate-700/35 bg-slate-950/55 shadow-[0_20px_60px_rgba(2,6,23,0.45)] backdrop-blur-sm">
-        <table className="w-full min-w-215 border-collapse">
+        <table className="w-full min-w-190 border-collapse">
           <thead>
             <tr className="border-b border-slate-800/90">
-              <th className="w-[30%] px-6 py-5 text-left text-base font-semibold text-slate-300" />
+              <th className="w-[30%] px-3 py-4 text-left text-sm font-semibold text-slate-300 sm:px-6 sm:py-5 sm:text-base" />
               {columns.map((column, columnIndex) => (
                 <th
                   key={column}
-                  className={`px-6 py-5 text-left text-xl font-semibold leading-none tracking-[-0.01em] max-md:text-lg ${
+                  className={`px-3 py-4 text-left text-base font-semibold leading-none tracking-[-0.01em] sm:px-6 sm:py-5 sm:text-xl ${
                     columnIndex === 0 ? "bg-indigo-500/8 text-indigo-200" : "text-slate-400"
                   }`}
                 >
@@ -77,14 +77,14 @@ const Comparison = () => {
           <tbody>
             {rows.map((row) => (
               <tr key={row.label} className="border-b border-slate-800/70 last:border-b-0">
-                <th className="px-6 py-6 text-left text-md font-semibold tracking-[-0.01em] text-slate-100 max-md:text-lg">
+                <th className="px-3 py-4 text-left text-sm font-semibold tracking-[-0.01em] text-slate-100 sm:px-6 sm:py-6 sm:text-base">
                   {row.label}
                 </th>
 
                 {row.values.map((value, valueIndex) => (
                   <td
                     key={`${row.label}-${columns[valueIndex]}`}
-                    className={`px-6 py-6 text-center ${valueIndex === 0 ? "bg-indigo-500/8" : ""}`}
+                    className={`px-3 py-4 text-center sm:px-6 sm:py-6 ${valueIndex === 0 ? "bg-indigo-500/8" : ""}`}
                   >
                     {renderCellValue(value)}
                   </td>

@@ -36,8 +36,8 @@ const Usecase = () => {
   return (
     <section className="mx-auto w-[min(1300px,calc(100%-64px))] py-18 max-md:w-[calc(100%-32px)] max-md:py-14">
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-4xl font-bold tracking-[-0.02em] text-slate-50 max-md:text-3xl">Built For</h2>
-        <p className="mt-4 text-xl text-slate-400 max-md:text-lg">Common scenarios where Relayy saves you time.</p>
+        <h2 className="text-3xl font-bold tracking-[-0.02em] text-slate-50 sm:text-4xl">Built For</h2>
+        <p className="mt-4 text-base text-slate-400 sm:text-xl">Common scenarios where Relayy saves you time.</p>
       </div>
 
       <div className="mx-auto mt-10 grid w-full max-w-5xl grid-cols-1 gap-5 md:grid-cols-2">
@@ -47,7 +47,7 @@ const Usecase = () => {
           return (
             <article
               key={useCase.title}
-              className="group relative overflow-hidden rounded-2xl border border-slate-700/35 bg-slate-950/55 px-6 py-7 shadow-[0_20px_60px_rgba(2,6,23,0.35)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-500/55 hover:shadow-[0_28px_80px_rgba(15,23,42,0.55)]"
+              className="group relative overflow-hidden rounded-2xl border border-slate-700/35 bg-slate-950/55 px-5 py-6 shadow-[0_20px_60px_rgba(2,6,23,0.35)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-500/55 hover:shadow-[0_28px_80px_rgba(15,23,42,0.55)] sm:px-6 sm:py-7"
             >
               <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-indigo-400/12 blur-3xl" />
@@ -60,10 +60,10 @@ const Usecase = () => {
                   <Icon className={`h-5 w-5 transition-transform duration-300 group-hover:rotate-3 ${useCase.accent}`} aria-hidden="true" />
                 </div>
 
-                <h3 className="mt-5 text-xl font-semibold tracking-[-0.02em] text-slate-50 transition-colors duration-300 group-hover:text-white max-md:text-xl">
+                <h3 className="mt-5 text-lg font-semibold tracking-[-0.02em] text-slate-50 transition-colors duration-300 group-hover:text-white sm:text-xl">
                   {useCase.title}
                 </h3>
-                <p className="mx-auto mt-3 max-w-[34ch] text-md leading-relaxed text-slate-400 max-md:text-lg">
+                <p className="mx-auto mt-3 max-w-[34ch] text-sm leading-relaxed text-slate-400 sm:text-base">
                   {useCase.description}
                 </p>
               </div>

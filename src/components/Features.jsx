@@ -35,20 +35,20 @@ const Features = () => {
           return (
             <article
               key={feature.title}
-              className="group relative overflow-hidden rounded-3xl border border-slate-400/10 bg-slate-950/55 px-8 py-10 text-center shadow-[0_12px_48px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300/20"
+              className="group relative overflow-hidden rounded-3xl border border-slate-400/10 bg-slate-950/55 px-5 py-7 text-center shadow-[0_12px_48px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300/20 sm:px-8 sm:py-10"
             >
               <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute left-1/2 top-0 h-44 w-44 -translate-x-1/2 rounded-full bg-sky-400/10 blur-3xl" />
               </div>
 
-              <div className="relative mx-auto mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-400/20 bg-slate-900/80 shadow-[0_0_24px_rgba(30,64,175,0.2)]">
-                <Icon className={`h-6 w-6 ${feature.iconColor}`} aria-hidden="true" />
+              <div className="relative mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-400/20 bg-slate-900/80 shadow-[0_0_24px_rgba(30,64,175,0.2)] sm:mb-8 sm:h-14 sm:w-14">
+                <Icon className={`h-5 w-5 sm:h-6 sm:w-6 ${feature.iconColor}`} aria-hidden="true" />
               </div>
 
-              <h3 className="relative text-2xl font-semibold leading-tight tracking-[-0.03em] text-slate-50 max-md:text-[1.8rem]">
+              <h3 className="relative text-xl font-semibold leading-tight tracking-[-0.03em] text-slate-50 sm:text-2xl">
                 {feature.title}
               </h3>
-              <p className="relative mx-auto mt-5 max-w-[30ch] text-md leading-relaxed text-slate-400 max-md:text-lg">
+              <p className="relative mx-auto mt-4 max-w-[30ch] text-sm leading-relaxed text-slate-400 sm:mt-5 sm:text-base">
                 {feature.description}
               </p>
             </article>
