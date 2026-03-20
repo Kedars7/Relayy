@@ -5,7 +5,7 @@ const faqItems = [
   {
     question: "Do I need to install anything?",
     answer:
-      "No. Relayy works with your existing SSH client. Just run relayy <port> to get started immediately. No account or configuration required.",
+      "No. Relayy works with your existing SSH client. Just run npx relayy <port> to get started immediately. No account or configuration required.",
   },
   {
     question: "What are the limits?",
@@ -61,7 +61,7 @@ const FAQ = () => {
               <button
                 type="button"
                 aria-expanded={isOpen}
-                className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                className="cursor-pointer flex w-full items-center justify-between gap-4 py-5 text-left"
                 onClick={() => toggleItem(index)}
               >
                 <span className="text-base font-semibold tracking-[-0.01em] text-slate-100 sm:text-lg">

@@ -4,12 +4,33 @@ import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation.jsx";
 import Footer from "../components/ui/Footer.jsx";
+import { FaRegCopy } from "react-icons/fa6";
 
 const DocsPage = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [copiedCommand, setCopiedCommand] = useState("");
 
   const toggleExpand = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const copyCommand = async (command) => {
+    try {
+      await navigator.clipboard.writeText(command);
+    } catch {
+      const textArea = document.createElement("textarea");
+      textArea.value = command;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+    }
+
+    setCopiedCommand(command);
+    window.setTimeout(() => setCopiedCommand(""), 1500);
   };
 
   const troubleshootingItems = [
@@ -119,26 +140,22 @@ const DocsPage = () => {
                   Expose a React/Vite App
                 </h3>
                 <div className="overflow-x-auto rounded-lg border border-slate-700/50 bg-slate-800/50 p-4 font-mono sm:p-6">
-                  <div className="text-slate-300 text-sm">
-                    <span className="text-slate-500">$</span> npx relayy 5173
-                  </div>
-                </div>
-                <div className="mt-3 flex items-center gap-2 text-slate-400">
-                  <button className="hover:text-slate-300 transition-colors p-1">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0 text-sm text-slate-300">
+                      <span className="text-slate-500">$</span>{" "}
+                      <span className="whitespace-nowrap">npx relayy 5173</span>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => copyCommand("npx relayy 5173")}
+                      className="cursor-pointer inline-flex shrink-0 items-center gap-2 rounded-md border border-slate-600/80 px-2.5 py-1.5 text-xs text-slate-300 transition-colors hover:border-slate-400 hover:text-slate-100"
+                      aria-label="Copy React Vite command"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </button>
+                      <FaRegCopy className="h-4 w-4" />
+                      {copiedCommand === "npx relayy 5173" ? "Copied" : "Copy"}
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -148,26 +165,22 @@ const DocsPage = () => {
                   Expose a Python Flask App
                 </h3>
                 <div className="overflow-x-auto rounded-lg border border-slate-700/50 bg-slate-800/50 p-4 font-mono sm:p-6">
-                  <div className="text-slate-300 text-sm">
-                    <span className="text-slate-500">$</span> npx relayy 5000
-                  </div>
-                </div>
-                <div className="mt-3 flex items-center gap-2 text-slate-400">
-                  <button className="hover:text-slate-300 transition-colors p-1">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0 text-sm text-slate-300">
+                      <span className="text-slate-500">$</span>{" "}
+                      <span className="whitespace-nowrap">npx relayy 5000</span>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => copyCommand("npx relayy 5000")}
+                      className="cursor-pointer inline-flex shrink-0 items-center gap-2 rounded-md border border-slate-600/80 px-2.5 py-1.5 text-xs text-slate-300 transition-colors hover:border-slate-400 hover:text-slate-100"
+                      aria-label="Copy Python Flask command"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </button>
+                      <FaRegCopy className="h-4 w-4" />
+                      {copiedCommand === "npx relayy 5000" ? "Copied" : "Copy"}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -184,11 +197,11 @@ const DocsPage = () => {
               {troubleshootingItems.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-slate-800/30 border border-slate-700/50 rounded-lg overflow-hidden hover:bg-slate-800/50 transition-colors"
+                  className=" bg-slate-800/30 border border-slate-700/50 rounded-lg overflow-hidden hover:border-slate-700/80 transition-colors"
                 >
                   <button
                     onClick={() => toggleExpand(index)}
-                    className="flex w-full items-center justify-between px-4 py-4 text-left transition-colors hover:bg-slate-700/20 sm:px-6 sm:py-5"
+                    className="cursor-pointer flex w-full items-center justify-between px-4 py-4 text-left transition-colors hover:border-slate-700/80 sm:px-6 sm:py-5"
                   >
                     <span className="text-base font-semibold text-white sm:text-lg">
                       {item.title}
@@ -200,7 +213,7 @@ const DocsPage = () => {
                     />
                   </button>
                   {expandedIndex === index && (
-                    <div className="border-t border-slate-700/30 bg-slate-900/30 px-4 py-4 text-sm text-slate-300 sm:px-6 sm:text-base">
+                    <div className="border-t border-slate-700/30 bg-slate-800/30 px-4 py-4 text-sm text-slate-300 sm:px-6 sm:text-base">
                       {item.content}
                     </div>
                   )}
